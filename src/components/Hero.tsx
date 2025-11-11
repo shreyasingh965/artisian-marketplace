@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import heroImage from "@/assets/hero-marketplace.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -41,10 +44,10 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-wrap gap-4 justify-center">
-          <Button size="lg" className="shadow-medium">
+          <Button size="lg" className="shadow-medium" onClick={() => navigate("/products")}>
             Explore Collection
           </Button>
-          <Button size="lg" variant="outline" className="bg-white/90 backdrop-blur-sm border-white hover:bg-white shadow-medium">
+          <Button size="lg" variant="outline" className="bg-white/90 backdrop-blur-sm border-white hover:bg-white shadow-medium" onClick={() => navigate("/auth")}>
             Become an Artisan
           </Button>
         </div>
